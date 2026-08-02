@@ -1,4 +1,17 @@
 
+"""
+LeetCode 1456 - Maximum Number of Vowels in a Substring of Given Length
+
+Brief:
+Return the maximum number of vowels in any substring of size k.
+
+Sliding window idea:
+- Expand: include right character and increment current vowel count if needed.
+- Shrink: if window size exceeds k, remove left character contribution.
+- Fixed-size window invariant: window size is kept at most k.
+- Answer: best vowel count when window size is exactly k.
+"""
+
 def maxVowels(s: str, k: int) -> int:
 
     def isVowel(s: str) -> bool:

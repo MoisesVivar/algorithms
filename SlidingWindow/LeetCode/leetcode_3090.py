@@ -1,3 +1,16 @@
+"""
+LeetCode 3090 - Maximum Length Substring With Two Occurrences
+
+Brief:
+Find the longest substring where each character appears at most twice.
+
+Sliding window idea:
+- Expand: move right and increment frequency of s[right].
+- Shrink: while freq of s[right] exceeds 2, move left and decrement frequencies.
+- Valid window invariant: every character count in window is <= 2.
+- Answer: maximum valid window length.
+"""
+
 from collections import defaultdict
 
 def maximumLengthSubstring(s: str) -> int:

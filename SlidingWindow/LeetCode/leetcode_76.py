@@ -1,4 +1,18 @@
 
+"""
+LeetCode 76 - Minimum Window Substring
+
+Brief:
+Find the smallest substring in s that contains all characters of t (with multiplicity).
+
+Sliding window idea:
+- Expand: move right and add useful characters to window frequency.
+- Shrink: while window satisfies all required counts, update best range,
+  then move left to minimize.
+- Valid window invariant: for every required character c, window_freq[c] >= t_freq[c].
+- Answer: shortest valid window found.
+"""
+
 def minWindow(s: str, t: str) -> str:
     def get_index(c: str) -> int:
         index = ord(c) - ord('A')

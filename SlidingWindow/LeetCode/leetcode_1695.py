@@ -1,3 +1,16 @@
+"""
+LeetCode 1695 - Maximum Erasure Value
+
+Brief:
+Find the maximum sum of a subarray containing only unique elements.
+
+Sliding window idea:
+- Expand: add nums[right] to frequency map and running sum.
+- Shrink: while nums[right] is duplicated, move left, decrement freq, subtract values.
+- Valid window invariant: all elements in window are unique.
+- Answer: maximum running sum of valid windows.
+"""
+
 from collections import defaultdict
 
 def maximumUniqueSubarray(nums: list[int]) -> int:

@@ -1,4 +1,17 @@
 
+"""
+LeetCode 209 - Minimum Size Subarray Sum
+
+Brief:
+Find the smallest length of a contiguous subarray with sum >= target.
+
+Sliding window idea:
+- Expand: move right and add nums[right] to running sum.
+- Shrink: while sum >= target, update minimum length and remove left element.
+- Valid/goal condition: sum >= target triggers contraction to minimize length.
+- Answer: smallest length found, or 0 if no valid window exists.
+"""
+
 def minSubArrayLen(target: int, nums: list[int]) -> int:
     min_len = float('inf')
     left = 0

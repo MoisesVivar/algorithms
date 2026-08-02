@@ -1,4 +1,17 @@
 
+"""
+LeetCode 1358 - Number of Substrings Containing All Three Characters
+
+Brief:
+Count substrings that contain at least one 'a', one 'b', and one 'c'.
+
+Sliding window idea:
+- Expand: move right and update frequency of a/b/c.
+- Shrink: while window is valid (all 3 present), add len(s) - right to answer,
+  then move left to find the next smaller valid window.
+- Counting trick: if [left..right] is valid, every extension to the right is also valid.
+"""
+
 def numberOfSubstrings(s: str) -> int:
     def char_index(c: str):
         return ord(c) - ord('a')

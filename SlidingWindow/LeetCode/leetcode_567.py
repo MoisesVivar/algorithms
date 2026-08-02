@@ -1,4 +1,17 @@
 
+"""
+LeetCode 567 - Permutation in String
+
+Brief:
+Check if s2 contains any permutation of s1 as a contiguous substring.
+
+Sliding window idea:
+- Expand: move right and update frequency for s2 window.
+- Shrink: if window size exceeds len(s1), remove left char frequency.
+- Fixed-size window invariant: window size stays at len(s1).
+- Answer: true once current window frequency matches s1 frequency.
+"""
+
 def checkInclusion(s1: str, s2: str) -> bool:
     def get_char_index(c: str) -> int:
         return ord(c) - ord('a')

@@ -1,3 +1,16 @@
+"""
+LeetCode 992 - Subarrays with K Different Integers
+
+Brief:
+Count subarrays with exactly k distinct integers.
+
+Sliding window idea:
+- Core identity: exactly_k = at_most(k) - at_most(k - 1).
+- Expand (inside at_most): move right and add current number frequency.
+- Shrink (inside at_most): while distinct values exceed limit, move left and clean map.
+- Counting trick: add right - left + 1 valid windows ending at each right.
+"""
+
 from collections import defaultdict
 
 def subarraysWithKDistinct(nums: list[int], k:int) -> int:

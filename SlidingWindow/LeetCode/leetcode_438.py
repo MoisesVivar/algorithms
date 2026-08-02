@@ -1,4 +1,17 @@
 
+"""
+LeetCode 438 - Find All Anagrams in a String
+
+Brief:
+Return all start indices where an anagram of p appears in s.
+
+Sliding window idea:
+- Expand: move right and add current char to window frequency.
+- Shrink: if window size exceeds len(p), remove left char.
+- Fixed-size window invariant: compare only windows of length len(p).
+- Answer: record left index whenever window_freq equals p_freq.
+"""
+
 def findAnagrams(s: str, p: str) -> list[int]:
     indices = []
     def char_index(c: str) -> int:

@@ -1,3 +1,16 @@
+"""
+LeetCode 1438 - Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
+
+Brief:
+Find the longest subarray where max(nums in window) - min(nums in window) <= limit.
+
+Sliding window idea:
+- Expand: move right and maintain monotonic deques for max and min values.
+- Shrink: while current max - min > limit, move left and evict stale deque indices.
+- Valid window invariant: absolute difference between window max and min <= limit.
+- Answer: maximum valid window length.
+"""
+
 from collections import deque
 
 def longestSubarray(nums: list[int], limit: int) -> int:
