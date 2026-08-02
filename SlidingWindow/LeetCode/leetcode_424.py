@@ -1,4 +1,17 @@
 
+"""
+LeetCode 424 - Longest Repeating Character Replacement
+
+Brief:
+Find the longest substring you can make all one letter by replacing at most k chars.
+
+Sliding window idea:
+- Expand: move right and update character frequencies.
+- Shrink: if (window_size - highest_char_freq) > k, move left and reduce freq.
+- Valid window invariant: needed replacements <= k.
+- Answer: maximum valid window length.
+"""
+
 
 def characterReplacement(s: str, k: int) -> int:
     def char_index(c: str) -> int:

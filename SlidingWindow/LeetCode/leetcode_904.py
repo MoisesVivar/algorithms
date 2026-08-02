@@ -1,3 +1,16 @@
+"""
+LeetCode 904 - Fruit Into Baskets
+
+Brief:
+Find the longest subarray containing at most two distinct fruit types.
+
+Sliding window idea:
+- Expand: move right and update fruit frequency map.
+- Shrink: while distinct types > 2, remove from left and delete zero counts.
+- Valid window invariant: at most two distinct fruit values in window.
+- Answer: maximum valid window length.
+"""
+
 from collections import defaultdict
 
 def totalFruit(fruits: list[int]) -> int:
