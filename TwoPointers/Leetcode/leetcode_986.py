@@ -1,3 +1,15 @@
+"""
+LeetCode 986 - Interval List Intersections
+
+Brief:
+Given two sorted lists of disjoint intervals, return their intersections.
+
+Two pointers idea:
+- One pointer per list, comparing the current interval of each.
+- If they overlap, the intersection is [max(starts), min(ends)].
+- Advance the pointer of the interval that ends first (both if they end together), since it cannot overlap anything further.
+- Answer: all intersections collected in order.
+"""
 
 def intervalIntersection(firstList: list[list[int]], secondList: list[list[int]]) -> list[list[int]]:
     intersecs = []

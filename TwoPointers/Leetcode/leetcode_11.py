@@ -1,3 +1,15 @@
+"""
+LeetCode 11 - Container With Most Water
+
+Brief:
+Given vertical line heights, pick two lines that together with the x-axis hold the most water.
+
+Two pointers idea:
+- Start with pointers at both ends (widest container).
+- Area = width * min(height[left], height[right]).
+- Move the pointer at the shorter line inward: moving the taller one can only shrink width without raising the limiting height.
+- Answer: the largest area seen.
+"""
 
 def maxArea(height: list[int]) -> int:
     left = 0

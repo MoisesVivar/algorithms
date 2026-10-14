@@ -1,3 +1,14 @@
+"""
+LeetCode 1658 - Minimum Operations to Reduce X to Zero
+
+Brief:
+Repeatedly remove the leftmost or rightmost element to reduce x to exactly 0, using the fewest operations.
+
+Two pointers (sliding window) idea:
+- Removed elements form a prefix + suffix, so what remains is a middle subarray summing to sum(nums) - x.
+- Find the longest subarray with that target sum using a window: expand right, shrink left while the sum exceeds the target.
+- Answer: n - longest window length, or -1 if no such window exists.
+"""
 
 def minOperations(nums: list[int], x: int) -> int:
     n = len(nums)

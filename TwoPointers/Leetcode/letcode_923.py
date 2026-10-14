@@ -1,3 +1,15 @@
+"""
+LeetCode 923 - 3Sum With Multiplicity
+
+Brief:
+Count the index triples i < j < k whose values sum to the target (modulo 10^9 + 7).
+
+Two pointers idea:
+- Sort the array, fix arr[i], and run left/right pointers over the rest as in 3Sum.
+- On a match, count the run of equal values on each side.
+- If both sides hold the same value, add C(n, 2) = n * (n - 1) / 2 pairs; otherwise add left_count * right_count.
+- Answer: the total count modulo 10^9 + 7.
+"""
 
 def threeSumMulti(arr: list[int], target: int) -> int:
     arr.sort()

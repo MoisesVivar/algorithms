@@ -1,3 +1,15 @@
+"""
+LeetCode 18 - 4Sum
+
+Brief:
+Find all unique quadruplets in the array that sum to the target.
+
+Two pointers idea:
+- Sort the array, fix two elements (i, j) with nested loops, then run two pointers (k, l) over the rest.
+- Sum too small -> k++, too big -> l--; on a match record it and move both.
+- Prune: skip j if the smallest or largest possible sum cannot reach the target.
+- Skip duplicate values at every level to keep quadruplets unique.
+"""
 
 def fourSum(nums: list[int], target: int) -> list[list[int]]:
     if len(nums) < 4: return []

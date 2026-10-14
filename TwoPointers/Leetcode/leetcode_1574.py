@@ -1,3 +1,15 @@
+"""
+LeetCode 1574 - Shortest Subarray to be Removed to Make Array Sorted
+
+Brief:
+Find the length of the shortest contiguous subarray to remove so the remaining elements are non-decreasing.
+
+Two pointers idea:
+- Find the longest sorted prefix (ends at left_limit) and longest sorted suffix (starts at right_limit).
+- Baseline: remove everything between, or keep only the longer of prefix/suffix.
+- Then merge: for each prefix element left, advance right until arr[left] <= arr[right]; the gap between them is removable.
+- Answer: the smallest removal length found.
+"""
 
 def findLengthOfShortestSubarray(arr: list[int]) -> int:
     n = len(arr)
