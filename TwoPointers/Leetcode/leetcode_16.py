@@ -1,3 +1,15 @@
+"""
+LeetCode 16 - 3Sum Closest
+
+Brief:
+Find the sum of three integers in the array that is closest to the target.
+
+Two pointers idea:
+- Sort the array, fix nums[i], and use left/right pointers over the remainder.
+- Sum below target -> move left up; above target -> move right down.
+- Track the sum with the smallest absolute difference to the target.
+- Answer: the closest sum (return early if an exact match is found).
+"""
 
 def threeSumClosest(nums: list[int], target: int) -> int:
     nums.sort()

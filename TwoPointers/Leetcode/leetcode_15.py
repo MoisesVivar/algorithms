@@ -1,3 +1,15 @@
+"""
+LeetCode 15 - 3Sum
+
+Brief:
+Find all unique triplets in the array that sum to zero.
+
+Two pointers idea:
+- Sort the array, then fix one element nums[i] and look for a pair summing to -nums[i].
+- Pair search: left pointer j after i, right pointer k at the end; sum too small -> j++, too big -> k--.
+- On a match, record the triplet and move both pointers.
+- Skip duplicate values for i, j and k to avoid repeated triplets.
+"""
 
 def threeSum(nums: list[int]) -> list[list[int]]:
     nums.sort()

@@ -1,3 +1,15 @@
+"""
+LeetCode 948 - Bag of Tokens
+
+Brief:
+Starting with some power and score 0, play tokens face up (spend power, gain 1 score) or face down (spend 1 score, gain power) to maximize score.
+
+Two pointers idea:
+- Sort the tokens: cheapest on the left, most valuable on the right.
+- Face up the cheapest token (left) when power allows it.
+- Otherwise, if there is score to spend, face down the most expensive token (right) to gain the most power.
+- Stop when neither move is possible; answer: the score reached.
+"""
 
 def bagOfTokensScore(tokens: list[int], power: int) -> int:
     score = 0
